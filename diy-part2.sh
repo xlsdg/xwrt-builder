@@ -11,15 +11,13 @@
 #
 
 # Modify default IP
-#sed -i 's/192.168.1.1/192.168.88.9/g' package/base-files/files/bin/config_generate
-#sed -i 's/192.168.1.1/192.168.88.9/g' package/base-files/luci2/bin/config_generate
+sed -i 's/192.168.15.1/192.168.88.10/g' package/base-files/files/bin/config_generate
 
 # Modify default theme
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
 # Modify hostname
-#sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
-#sed -i 's/LEDE/Lede/g' package/base-files/luci2/bin/config_generate
+sed -i 's/OpenWrt/X-Wrt/g' package/base-files/files/bin/config_generate
 
 find . -type d -iname "*openclash*" -exec rm -rf {} + 2>/dev/null || true
 git clone -b dev --depth 1 https://github.com/vernesong/OpenClash.git package/luci-app-openclash
