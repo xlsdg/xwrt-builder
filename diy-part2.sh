@@ -21,3 +21,6 @@ sed -i 's/OpenWrt/XWrt/g' package/base-files/files/bin/config_generate
 
 find . -type d -iname "*openclash*" -exec rm -rf {} + 2>/dev/null || true
 git clone -b dev --depth 1 https://github.com/vernesong/OpenClash.git package/luci-app-openclash
+
+# Set Rust build arg llvm.download-ci-llvm to false.
+sed -i 's/--set=llvm\.download-ci-llvm=true/--set=llvm\.download-ci-llvm=false/' feeds/packages/lang/rust/Makefile
